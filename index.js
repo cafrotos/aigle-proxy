@@ -10,6 +10,6 @@ var forceSsl = function (req, res, next) {
 
 app.use(forceSsl);
 
-app.use('/', createProxyMiddleware({ target: 'http://aigle.blife.ai', changeOrigin: true }));
+app.use('/', createProxyMiddleware({ target: 'http://aigle.blife.ai', changeOrigin: false }));
 
 app.listen(process.env.PORT || 3000)
