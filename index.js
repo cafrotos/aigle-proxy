@@ -8,9 +8,7 @@ var forceSsl = function (req, res, next) {
   return next();
 };
 
-app.configure(function () {
-  app.use(forceSsl);
-});
+app.use(forceSsl);
 
 app.use('/', createProxyMiddleware({ target: 'http://aigle.blife.ai', changeOrigin: true }));
 
