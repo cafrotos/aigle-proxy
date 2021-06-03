@@ -1,6 +1,6 @@
-const proxy = require('express-http-proxy');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = require('express')();
  
-app.use('/', proxy('http://aigle.blife.ai'));
+app.use('/', createProxyMiddleware({ target: 'http://aigle.blife.ai', changeOrigin: true }));
 
 app.listen(process.env.PORT || 3000)
